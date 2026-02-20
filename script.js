@@ -1,4 +1,4 @@
-
+ 
 
 
         function revealTag(el) {
@@ -30,75 +30,56 @@ for (let i = 0; i < 40; i++) {
   pEl.appendChild(p);
 }
 
-        const wishes = [
-            "May your smile shine forever 💖",
-            "You are my favorite blessing 🌸",
-            "Stay happy always 🌷",
-            "Life is beautiful because of you ✨",
-            "Keep glowing like a star 🌟",
-            "May all dreams come true 💕",
-            "Forever special to my heart 💞",
-            "Happiness looks perfect on you 🌺"
-        ];
         /* ═══════════════════════════════════════════
            📸 YOUR PHOTOS — paste image paths here
            Replace each "" with your image file path or URL.
            Example: "photo1.jpg"  or  "https://example.com/photo.jpg"
         ═══════════════════════════════════════════ */
-       const imageSources = [
-    "images/[000106].jpg",
-    "images/20251205_123728.jpg",
-    "images/20251205_123752.jpg",
-    "images/[004446].jpg",
-    "images/[004488].jpg",
-    "images/[004761].jpg",
-    "images/20251205_113351.jpg",
-    "images/20251205_162837.jpg",
-    "images/[004601].jpg",
-    "images/[004779].jpg",
-    "images/20251205_110001.jpg",
-    "images/20251205_110201.jpg",
-    "images/20251205_111416.jpg",
-    "images/20251205_113233.jpg",
-    "images/20251205_113311.jpg",
-    "images/20251205_113351.jpg",
-];
+        const imageSources = [
+            "./[000106].jpg",  // 📸 Photo 1
+            "./20251205_123728.jpg",  // 📸 Photo 2
+            "./20251205_123752.jpg",  // 📸 Photo 3
+            "./[004446].jpg",  // 📸 Photo 4
+            "./[004488].jpg",  // 📸 Photo 5
+            "./[004761].jpg",  // 📸 Photo 6
+            "./20251205_113351.jpg",  // 📸 Photo 7
+            "./20251205_162837.jpg",  // 📸 Photo 8
+            "./[004601].jpg",  // 📸 Photo 9
+            "./[004779].jpg",  // 📸 Photo 10
+            "./20251205_110001.jpg",  // 📸 Photo 11
+            "./20251205_110201.jpg",  // 📸 Photo 12
+            "./20251205_111416.jpg",  // 📸 Photo 13
+            "./20251205_113233.jpg",  // 📸 Photo 14
+            "./20251205_113311.jpg",  // 📸 Photo 15
+            "./20251205_113351.jpg",  // 📸 Photo 16
+        ];
 
 
         // Placeholder gradients + icons shown until you add photos 
         const G = [['#ff6b9d', '#c084fc'], ['#ff4778', '#7c3aed'], ['#6366f1', '#ec4899'], ['#e11d48', '#9333ea'], ['#ffd700', '#ff6b9d'], ['#f472b6', '#a855f7'], ['#fb7185', '#c084fc'], ['#38bdf8', '#818cf8'], ['#fb923c', '#e879f9'], ['#fbbf24', '#f472b6'], ['#34d399', '#60a5fa'], ['#f43f5e', '#8b5cf6'], ['#60a5fa', '#f472b6'], ['#fcd34d', '#f97316'], ['#a5b4fc', '#f9a8d4'], ['#4f46e5', '#db2777']]; const PI = ['🌸', '💑', '🌙', '🌹', '✨', '🎀', '💖', '🦋', '🌺', '🌟', '🥂', '💝', '🌈', '🎂', '💫', '🌙'];
 
-        // ═══════════════════════════════
-        // 💖 Build Circular 3D Carousel (CLEAN)
-        // ═══════════════════════════════
+/* ------------------ 3D PHOTO CAROUSEL ------------------ */
+const carousel = document.getElementById('photosGrid');
+const totalPhotos = imageSources.length;
+const radius = 650;
 
-        const grid = document.getElementById('photosGrid');
-        const total = imageSources.length;
-        const radius = 650;
+imageSources.forEach((src, i) => {
+    const angle = (360 / totalPhotos) * i;
+    const card = document.createElement('div');
+    card.className = 'photo-frame';
+    card.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
 
-        imageSources.forEach((src, i) => {
+    const imgBox = document.createElement('div');
+    imgBox.className = 'image-box';
+    const img = document.createElement('img');
+    img.src = src;
+    imgBox.appendChild(img);
 
-            const frame = document.createElement('div');
-            frame.className = 'photo-frame';
+    card.appendChild(imgBox);
 
-            const angle = (360 / total) * i;
-            frame.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
-
-            frame.innerHTML = `
-  <div class="photo-card">
-    <div class="image-box">
-      <img src="${src}" alt="Memory ${i + 1}">
-    </div>
-
-    <div class="blur-bottom">
-      <p class="wish-text">${wishes[i % wishes.length]}</p>
-    </div>
-  </div>
-`;
-
-           grid.appendChild(frame);
-
-        });
+    
+    carousel.appendChild(card);
+});
 
 // 💗 Multi-Color Glass Hearts
 const HEART_COUNT = 10;
