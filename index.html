@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love 💖</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600&display=swap"
+        rel="stylesheet"> 
+        <link rel="stylesheet" href="style.css">
+   
+
+</head>
+
+<body>
+    <!-- Stars -->
+<div class="stars" id="stars"></div>
+
+<!-- Particles -->
+<div class="particles" id="particles"></div>
+
+    <div class="rain-canvas" id="rainCanvas"></div>
+
+    <div class="music-indicator" id="musicIndicator" onclick="toggleMute()">
+        <span class="mnote">🎵</span>
+        <div class="mbars">
+            <div class="mbar"></div>
+            <div class="mbar"></div>
+            <div class="mbar"></div>
+            <div class="mbar"></div>
+        </div>
+        <span id="musicLabel">Music On</span>
+    </div>
+
+    <div class="page-dots">
+        <div class="pdot on" id="dot0"></div>
+        <div class="pdot" id="dot1"></div>
+        <div class="pdot" id="dot2"></div>
+        <div class="pdot" id="dot3"></div>
+    </div>
+
+    <!-- PAGE 1 -->
+    <div class="page active" id="page1">
+    <div class="glass-card">
+        <span class="crown">👑</span>
+        <div class="p1-title">Hello, My Love!</div>
+        <div class="p1-sub">✨ Tap everything that is you ✨</div>
+
+        <!-- Surprise tags grid -->
+       <div class="tags-grid">
+  <div class="tag-envelope" onclick="revealTag(this)">
+      <div class="envelope-icon">💌</div>
+      <span class="tag-message">🌸 Lovely</span>
+  </div>
+  <div class="tag-envelope" onclick="revealTag(this)">
+      <div class="envelope-icon">💌</div>
+      <span class="tag-message">✨ Magical</span>
+  </div>
+  <div class="tag-envelope" onclick="revealTag(this)">
+      <div class="envelope-icon">💌</div>
+      <span class="tag-message">💎 Precious</span>
+  </div>
+  <div class="tag-envelope" onclick="revealTag(this)">
+      <div class="envelope-icon">💌</div>
+      <span class="tag-message">☀️ Sunshine</span>
+  </div>
+  <div class="tag-envelope" onclick="revealTag(this)">
+      <div class="envelope-icon">💌</div>
+      <span class="tag-message">⭐ MyStar</span>
+  </div>
+  <div class="tag-envelope" onclick="revealTag(this)">
+      <div class="envelope-icon">💌</div>
+      <span class="tag-message">💖 Gorgeous</span>
+  </div>
+  <div class="tag-envelope" onclick="revealTag(this)">
+      <div class="envelope-icon">💌</div>
+      <span class="tag-message">🦋 FreeSpirit</span>
+  </div>
+  <div class="tag-envelope" onclick="revealTag(this)">
+      <div class="envelope-icon">💌</div>
+      <span class="tag-message">🌙 Dreamy</span>
+  </div>
+  <div class="tag-envelope" onclick="revealTag(this)">
+      <div class="envelope-icon">💌</div>
+      <span class="tag-message">💫 Radiant</span>
+  </div>
+  <div class="tag-envelope" onclick="revealTag(this)">
+      <div class="envelope-icon">💌</div>
+      <span class="tag-message">🌹 Rare</span>
+  </div>
+</div>
+
+        <div class="progress-wrap">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <button class="btn-primary" id="nextBtn1" onclick="goToPage(2)">Continue →</button>
+    </div>
+</div>
+
+    <!-- PAGE 2 -->
+  <div class="page" id="page2">
+    <div class="wish-card">
+        <div class="candle-row">🕯️ 🎂 🕯️</div>
+        <div class="wish-name">Happy Birthday!</div>
+        <!-- New gradient text -->
+        <div class="sweet-heart">My Sweet Heart</div>
+
+        <div class="quotes-container">
+            <div class="quote active-q">
+                <div class="quote-mark">"</div>
+                <div class="quote-text">On this beautiful day, may every star in the sky shine just for you. You
+                    deserve all
+                    the magic the universe holds — and so much more.</div>
+            </div>
+            <div class="quote">
+                <div class="quote-mark">"</div>
+                <div class="quote-text">You are not just a year older — you are a year more radiant, more wise, more
+                    breathtakingly you. The world is lucky to have you in it.</div>
+            </div>
+            <div class="quote">
+                <div class="quote-mark">"</div>
+                <div class="quote-text">May your birthday be as wonderful as you make everyone feel every single
+                    day. You are
+                    pure sunshine wrapped in a beautiful soul.</div>
+            </div>
+            <div class="quote">
+                <div class="quote-mark">"</div>
+                <div class="quote-text">Today the universe celebrates the day its most precious gift arrived. Every
+                    moment of
+                    your life is extraordinary. Happy Birthday, love.</div>
+            </div>
+        </div>
+        <div class="qdots">
+            <div class="qdot on" onclick="setQuote(0)"></div>
+            <div class="qdot" onclick="setQuote(1)"></div>
+            <div class="qdot" onclick="setQuote(2)"></div>
+            <div class="qdot" onclick="setQuote(3)"></div>
+        </div>
+        <div class="wish-footer"><span class="ribbon">🎀</span> with all my love <span class="ribbon">🎀</span>
+        </div>
+        <button class="btn-gold" onclick="goToPage(3)">Something Special For You →</button>
+    </div>
+</div>
+
+    <!-- PAGE 3 -->
+    <div class="page" id="page3">
+        <div class="date-card">
+            <span class="rose-icon">🌹</span>
+            <div class="date-title">Our Special Date</div>
+            <div class="date-subtitle">I want to celebrate YOU… pick your dream evening 🌙</div>
+            <div class="date-options">
+                <div class="date-option"
+                    onclick="chooseDate(this,'Candlelight dinner under the stars — my treat, your smile is the only menu. 🕯️')">
+                    <span class="opt-icon">🕯️</span>
+                    <div class="opt-label">Candlelight Dinner</div>
+                </div>
+                <div class="date-option"
+                    onclick="chooseDate(this,'Midnight rooftop with fairy lights, music and just us — pure magic! ✨')">
+                    <span class="opt-icon">🌃</span>
+                    <div class="opt-label">Rooftop Night</div>
+                </div>
+                <div class="date-option"
+                    onclick="chooseDate(this,'Cozy movie night, warm blankets, popcorn and your head on my shoulder. 🎬')">
+                    <span class="opt-icon">🎬</span>
+                    <div class="opt-label">Movie Night</div>
+                </div>
+                <div class="date-option"
+                    onclick="chooseDate(this,'Sunset picnic with roses, wine and everything beautiful, just like you. 🌅')">
+                    <span class="opt-icon">🌅</span>
+                    <div class="opt-label">Sunset Picnic</div>
+                </div>
+            </div>
+            <div class="date-msg" id="dateMsg"></div>
+            <button class="btn-rose" id="nextBtn3" onclick="goToPage(4)">See Our Memories 💖</button>
+        </div>
+    </div>
+
+    <!-- PAGE 4 — FULLSCREEN 3D GALLERY -->
+    <div class="page" id="page4">
+        <div class="gallery-wrap">
+            <div class="gallery-header">
+                <div class="gallery-title">💖 Our Beautiful Memories</div>
+                <div class="gallery-sub">Hover each frame to feel the magic</div>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel" id="photosGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+  🎵 MUSIC — PASTE YOUR AUDIO FILE PATHS HERE
+  Replace the src="" values with your actual music files.
+  Example: <source src="my-song.mp3" type="audio/mpeg">
+  Or URL:  <source src="https://yoursite.com/song.mp3" type="audio/mpeg">
+═══════════════════════════════════════════════════════ -->
+    <audio id="musicMain" loop>
+        <!-- 🎵 MUSIC FOR PAGES 1, 2, 3 — paste your file path in src="" below -->
+        <source src="music/music1.mpeg" type="audio/mpeg">
+    </audio>
+
+    <audio id="musicGallery" loop>
+        <!-- 🎵 ROMANTIC MUSIC FOR PAGE 4 — paste your file path in src="" below -->
+        <source src="music/music2.mpeg" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
